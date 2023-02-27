@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="form.css" /> -->
+    <title>User Information</title>
+
+<style>
+  body {
+  background: url(https://q-xx.bstatic.com/xdata/images/hotel/max1500/115211164.jpg?k=39d99ce1cae1063ad32d1fd5bd6c9ccd9a10bc5c1727b5616ef83c3245fd5ea8&o=);
+  /* background: #49b4c2; */
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+form {
+  color: black;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  position: relative;
+  left: 200px;
+  font-weight: 800;
+}
+#con {
+  font-size: 54px;
+}
+#mes {
+  font-size: 24px;
+  margin-top: -30px;
+}
+#formcontainer {
+  margin-top: 40px;
+}
+label {
+  font-size: 20px;
+  margin-right: 70px;
+  font-weight: 600;
+}
+input {
+  padding: 10px;
+  margin-top: 30px;
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  /* opacity: 0.8; */
+  border: 2px solid black;
+  color: black;
+}
+select {
+  width: 10%;
+  padding: 10px;
+  margin-top: 30px;
+  font-size: 15px;
+  margin-left: 5px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  opacity: 0.8;
+}
+#email {
+  position: relative;
+  right: 30px;
+  width: 24.7%;
+  /* border: 2px solid red; */
+}
+#mobile {
+  margin-left: 35px;
+  width: 11%;
+}
+#FirstName {
+  width: 10.8%;
+  position: relative;
+  right: 5px;
+}
+#LastName {
+  width: 10.8%;
+  position: relative;
+  right: 5px;
+  left: 8.5px;
+}
+
+hr {
+  width: 40.4%;
+  position: relative;
+  right: 30%;
+  margin-top: 0%;
+  border: 1px solid black;
+}
+#Expiry {
+  position: relative;
+  left: 42px;
+  /* border: 2px solid red; */
+  width: 31.6%;
+}
+#CVV {
+  position: relative;
+  width: 32.7%;
+
+  /* border: 2px solid red; */
+}
+#cv {
+  margin-left: 40px;
+}
+#check {
+  position: relative;
+  top: 65px;
+  left: 15%;
+  padding: 10px 40px 10px 40px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  background-color: crimson;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+#card {
+  display: flex;
+}
+#cvvlabel {
+  margin-right: 40px;
+}
+#amount {
+  margin-left: 25px;
+  width: 25%;
+}
+
+</style>
+
+  </head>
+
+  <body>
+    <form action="">
+      <p id="con">Payment Details</p>
+      <p id="mes">Please Enter Correct Details</p>
+      <div id="formcontainer">
+        <div id="nameC">
+          <label for="">Your Name</label>
+          <input type="text" placeholder="First Name" name="" id="FirstName" />
+          <input type="text" placeholder="Last Name" name="" id="LastName" />
+        </div>
+        <div id="EmailC">
+          <label for=""> Card Number </label>
+          <input
+            type="text"
+            placeholder="Enter 16 Digits Only"
+            name=""
+            id="email"
+          />
+        </div>
+        <div id="card">
+          <div id="exp">
+            <label for="">Expiry</label>
+            <input type="date" placeholder="DD/MM/YYYY" name="" id="Expiry" />
+          </div>
+          <div id="cv">
+            <label id="cvvlabel" for="">CVV</label>
+            <input type="text" placeholder="CVV" name="" id="CVV" />
+          </div>
+        </div>
+        <div id="totalamount">
+          <label for="">Amount</label>
+          <input
+            type="text"
+            
+            placeholder="Total Payable Amount"
+            name=""
+            id="amount"
+          />
+        </div>
+        <button id="check" type="submit">CHECKOUT</button>
+      </div>
+      <hr />
+    </form>
+  </body>
+  <script>
+    document.querySelector("form").addEventListener("submit", thank);
+
+    function thank() {
+      event.preventDefault();
+      alert("Thank you your order is confirmed");
+      window.location = "../index.html";
+    }
+    document.getElementById("amount").value =
+      "₹" + localStorage.getItem("FinalAmount");
+  </script>
+</html>
